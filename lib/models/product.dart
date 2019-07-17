@@ -25,4 +25,21 @@ class Product{
   set setDescription(String description){
     this.description = description;
   }
+
+  Map<String,dynamic> toMap(){
+    var map = Map<String,dynamic>();
+    map["name"] = name;
+    map["description"] = description;
+    map["price"] = price;
+    if(id != null)
+      map["id"] = id;
+    return map;
+  }
+
+  Product.fromObject(dynamic o){
+    this.id = o["id"];
+    this.name = o["name"];
+    this.description = o["description"];
+    this.price = o["price"];
+  }
 }
