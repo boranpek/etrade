@@ -8,6 +8,8 @@ class ProductDetail extends StatefulWidget {
   State<StatefulWidget> createState() => ProductDetailState(product);
 }
 
+enum Choice{Delete,Update}
+
 class ProductDetailState extends State<ProductDetail> {
   Product product;
   ProductDetailState(this.product);
@@ -15,7 +17,33 @@ class ProductDetailState extends State<ProductDetail> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Product Detail for ${product.name}"),
+        title: Text(
+            "Product Detail for ${product.name}"
+        ),
+        actions: <Widget>[
+          PopupMenuButton<Choice>(
+            onSelected: (Choice choice){
+              AlertDialog alertDialog = new AlertDialog(
+                title: Text("Success!"),
+                content: Text("$choice"),
+              );
+              showDialog(
+                  context: context,
+                  builder: (_)=>alertDialog
+              );
+            },
+            itemBuilder: (BuildContext context)=><PopupMenuEntry<Choice>>[
+              PopupMenuItem<Choice>(
+                value: Choice.Delete,
+                child: Text("Delete Product"),
+              ),
+              PopupMenuItem<Choice>(
+                value: Choice.Update,
+                child: Text("Update Product"),
+              )
+            ],
+          )
+        ],
       ),
       body: Center(
         child: Card(
