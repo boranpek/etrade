@@ -1,5 +1,6 @@
 import 'package:etrade/db/dbHelper.dart';
 import 'package:etrade/models/product.dart';
+import 'package:etrade/screens/productDetail.dart';
 import 'package:flutter/material.dart';
 
 class ProductList extends StatefulWidget{
@@ -17,11 +18,11 @@ class ProductListState extends State<ProductList>{
       getData();
     }
     return Scaffold(
-      body: ProductListItems(),
+      body: productListItems(),
     );
   }
 
-  ProductListItems() {
+  productListItems() {
     return ListView.builder(
       itemCount: count,
       itemBuilder: (BuildContext context, int position){
@@ -36,7 +37,7 @@ class ProductListState extends State<ProductList>{
             title: Text(this.products[position].name),
             subtitle: Text(this.products[position].description),
             onTap: (){
-
+              goToDetail(this.products[position]);
             },
           ),
         );
@@ -61,6 +62,10 @@ class ProductListState extends State<ProductList>{
       });
     });
 
+  }
+
+  void goToDetail(Product product) async {
+    await Navigator.push(context, MaterialPageRoute(builder: (context)=>ProductDetail()));
   }
 
 }
