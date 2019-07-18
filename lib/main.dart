@@ -1,5 +1,3 @@
-import 'package:etrade/db/dbHelper.dart';
-import 'package:etrade/models/product.dart';
 import 'package:etrade/screens/productList.dart';
 import 'package:flutter/material.dart';
 
