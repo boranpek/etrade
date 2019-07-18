@@ -59,7 +59,7 @@ class DbHelper{
 
   Future<List> getProducts() async {
     Database db = await this.db;
-    var result = await db.rawQuery("Selecet * from $tblProduct");
+    var result = await db.rawQuery("Select * from $tblProduct");
     return result;
   }
 

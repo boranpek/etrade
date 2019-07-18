@@ -36,7 +36,7 @@ class ProductListState extends State<ProductList>{
             title: Text(this.products[position].name),
             subtitle: Text(this.products[position].description),
             onTap: (){
-              
+
             },
           ),
         );

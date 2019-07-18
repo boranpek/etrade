@@ -37,9 +37,9 @@ class Product{
   }
 
   Product.fromObject(dynamic o) {
-    this.id = o["id"];
-    this.name = o["name"];
-    this.description = o["description"];
-    this.price = o["price"];
+    this.id = o["Id"];
+    this.name = o["Name"];
+    this.description = o["Description"];
+    this.price = double.tryParse(o["Price"].toString());
   }
 }
