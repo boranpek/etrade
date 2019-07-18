@@ -12,21 +12,21 @@ class Product{
   String get getDescription => description;
   double get getPrice => price;
 
-  set setName(String name){
+  set setName(String name) {
     if(name.length > 2)
       this.name = name;
   }
 
-  set setPrice(double price){
+  set setPrice(double price) {
     if(price > 0)
       this.price = price;
   }
 
-  set setDescription(String description){
+  set setDescription(String description) {
     this.description = description;
   }
 
-  Map<String,dynamic> toMap(){
+  Map<String,dynamic> toMap() {
     var map = Map<String,dynamic>();
     map["name"] = name;
     map["description"] = description;
@@ -36,7 +36,7 @@ class Product{
     return map;
   }
 
-  Product.fromObject(dynamic o){
+  Product.fromObject(dynamic o) {
     this.id = o["id"];
     this.name = o["name"];
     this.description = o["description"];
