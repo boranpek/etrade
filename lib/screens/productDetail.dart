@@ -1,3 +1,4 @@
+import 'package:etrade/db/dbHelper.dart';
 import 'package:etrade/models/product.dart';
 import 'package:flutter/material.dart';
 
@@ -8,6 +9,7 @@ class ProductDetail extends StatefulWidget {
   State<StatefulWidget> createState() => ProductDetailState(product);
 }
 
+DbHelper dbHelper = new DbHelper();
 enum Choice{Delete,Update}
 
 class ProductDetailState extends State<ProductDetail> {
@@ -22,16 +24,7 @@ class ProductDetailState extends State<ProductDetail> {
         ),
         actions: <Widget>[
           PopupMenuButton<Choice>(
-            onSelected: (Choice choice){
-              AlertDialog alertDialog = new AlertDialog(
-                title: Text("Success!"),
-                content: Text("$choice"),
-              );
-              showDialog(
-                  context: context,
-                  builder: (_)=>alertDialog
-              );
-            },
+            onSelected: select,
             itemBuilder: (BuildContext context)=><PopupMenuEntry<Choice>>[
               PopupMenuItem<Choice>(
                 value: Choice.Delete,
@@ -71,8 +64,6 @@ class ProductDetailState extends State<ProductDetail> {
                           context: context,
                           builder: (_)=>alertDialog
                         );
-
-
                       },
                     )
                   ],
@@ -83,6 +74,29 @@ class ProductDetailState extends State<ProductDetail> {
         ),
       ),
     );
+  }
+  void select(Choice choice) async {
+    int result;
+    switch(choice){
+      case
+        Choice.Delete:
+          Navigator.pop(context,true);
+          result = await dbHelper.delete(product.id);
+          if(result != 0){
+            AlertDialog alertDialog = new AlertDialog(
+              title: Text("Success!"),
+              content: Text("Deleted ${product.name}"),
+            );
+            showDialog(
+                context: context,
+                builder: (_)=>alertDialog
+            );
+          }
+
+        break;
+      default:
+    }
+
   }
 
 }

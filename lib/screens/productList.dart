@@ -65,7 +65,11 @@ class ProductListState extends State<ProductList>{
   }
 
   void goToDetail(Product product) async {
-    await Navigator.push(context, MaterialPageRoute(builder: (context)=>ProductDetail(product)));
+    bool result = await Navigator.push(context, MaterialPageRoute(builder: (context)=>ProductDetail(product)));
+    if(result != null){
+      if(result)
+        getData();
+    }
   }
 
 }
