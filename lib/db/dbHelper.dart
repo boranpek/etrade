@@ -1,7 +1,7 @@
+import 'package:path_provider/path_provider.dart';//dosyalara erişmek için
 import 'package:sqflite/sqflite.dart';
 import 'dart:async'; // asenkron operasyonlar için
 import 'dart:io'; //dosyalara ve veritabanına ulaşmak için
-import 'package:path_provider/path_provider.dart/'; //dosyalara erişmek için
 import 'package:etrade/models/product.dart';
 
 class DbHelper{
