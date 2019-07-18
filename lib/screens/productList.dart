@@ -1,5 +1,6 @@
 import 'package:etrade/db/dbHelper.dart';
 import 'package:etrade/models/product.dart';
+import 'package:etrade/screens/productAdd.dart';
 import 'package:etrade/screens/productDetail.dart';
 import 'package:flutter/material.dart';
 
@@ -19,6 +20,13 @@ class ProductListState extends State<ProductList>{
     }
     return Scaffold(
       body: productListItems(),
+      floatingActionButton: FloatingActionButton(
+        onPressed: (){
+          goToProductAdd();
+        },
+        tooltip: "add new product" ,
+        child: Icon(Icons.add),
+      ),
     );
   }
 
@@ -66,6 +74,14 @@ class ProductListState extends State<ProductList>{
 
   void goToDetail(Product product) async {
     bool result = await Navigator.push(context, MaterialPageRoute(builder: (context)=>ProductDetail(product)));
+    if(result != null){
+      if(result)
+        getData();
+    }
+  }
+
+  void goToProductAdd() async {
+    bool result = await Navigator.push(context, MaterialPageRoute(builder: (context)=>ProductAdd()));
     if(result != null){
       if(result)
         getData();
