@@ -33,8 +33,17 @@ class ProductDetailState extends State<ProductDetail> {
                 child: ButtonBar(
                   children: <Widget>[
                     FlatButton(
-                      child: Text("Add to card"),
+                      child: Text("Add to cart"),
                       onPressed: (){
+                        AlertDialog alertDialog = new AlertDialog(
+                          title: Text("Success!"),
+                          content: Text("${product.name} added to cart"),
+                        );
+                        showDialog(
+                          context: context,
+                          builder: (_)=>alertDialog
+                        );
+
 
                       },
                     )
