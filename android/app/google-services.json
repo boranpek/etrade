@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "819310082613",
+    "firebase_url": "https://flutter-7b435.firebaseio.com",
+    "project_id": "flutter-7b435",
+    "storage_bucket": "flutter-7b435.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:819310082613:android:e79d023880ebafce",
+        "android_client_info": {
+          "package_name": "com.example.etrade"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "819310082613-ag6ifeqv3ia7igr6s4fp5f51u4pfof70.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB0iTqeU_eQ1jmB8Fqm_qfvYry1XfyLQws"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "819310082613-ag6ifeqv3ia7igr6s4fp5f51u4pfof70.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "819310082613-6bte99mbugs5lo5lpkt2nlike8fcut2t.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.etrade"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

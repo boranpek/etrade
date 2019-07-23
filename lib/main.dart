@@ -1,3 +1,4 @@
+import 'package:etrade/screens/firebaseHomePage.dart';
 import 'package:etrade/screens/productList.dart';
 import 'package:flutter/material.dart';
 
@@ -35,7 +36,7 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body:ProductList()
+      body:FirebaseHomePage()
     );
   }
 }

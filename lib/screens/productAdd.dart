@@ -1,4 +1,5 @@
 import 'package:etrade/db/dbHelper.dart';
+import 'package:etrade/db/firebaseHelper.dart';
 import 'package:etrade/models/product.dart';
 import 'package:flutter/material.dart';
 
@@ -8,7 +9,7 @@ class ProductAdd extends StatefulWidget {
 }
 
 class ProductAddState extends State<ProductAdd> {
-  DbHelper dbHelper = new DbHelper();
+  FirebaseHelper dbHelper = new FirebaseHelper();
   
   TextEditingController txtName = new TextEditingController();
   TextEditingController txtDescription = new TextEditingController();
